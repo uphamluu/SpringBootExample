@@ -1,0 +1,5 @@
+# this file have to be created
+# specify context, path and port here, very important
+#server:
+#  context-path: /codenotfound
+#  port: 9090

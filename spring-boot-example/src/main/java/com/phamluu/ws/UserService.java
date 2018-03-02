@@ -1,4 +1,4 @@
-package com.javatpoint;
+package com.phamluu.ws;
 
 import java.util.List;
 import javax.ws.rs.GET;

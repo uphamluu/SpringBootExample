@@ -1,9 +1,5 @@
-package com.javatpoint;
+package com.phamluu.ws;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,9 +7,6 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
-import org.codehaus.jackson.JsonGenerationException;
-import org.codehaus.jackson.JsonParseException;
-import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
@@ -34,8 +26,8 @@ public class JSONServiceWithMongo {
 
 	
 	@RequestMapping(value="/listProductInMongo", method=RequestMethod.GET )
-	@Produces("application/json")
-	public void listProductInMongo() {
+    public  @ResponseBody Response listProductInMongo(HttpServletRequest request,
+		        HttpServletResponse response) {
 //		List<Product> results= new ArrayList<>();
 		
 		Mongo mongo = new Mongo("localhost", 27017);
@@ -43,12 +35,14 @@ public class JSONServiceWithMongo {
 		DBCollection collection = db.getCollection("PRODUCT_TBL");
 		DBCursor cursorDoc = collection.find();
 		ObjectMapper mapper = new ObjectMapper();
+		String result ="";
 		while (cursorDoc.hasNext()) {
 //			results.add((Product) cursorDoc.next());
 //			DBObject object = cursorDoc.next();
 			
 			
 			String jsonInString = cursorDoc.next().toString();
+			result +=jsonInString +"\r\n";
 			
 //			try {
 				System.out.println(jsonInString);
@@ -66,7 +60,7 @@ public class JSONServiceWithMongo {
 //			}
 		}
 		
-//		return results;
+		return Response.status(201).entity(result).build();
 		
 		
 	}

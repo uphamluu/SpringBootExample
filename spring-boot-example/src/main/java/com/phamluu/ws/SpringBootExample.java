@@ -1,4 +1,4 @@
-package com.javatpoint;  
+package com.phamluu.ws;  
   
 import org.springframework.boot.SpringApplication;  
 import org.springframework.boot.autoconfigure.SpringBootApplication;  
@@ -9,18 +9,21 @@ public class SpringBootExample {
         SpringApplication.run(SpringBootExample.class, args);  
     }
     
+    
+    // TODO Spring boot with primeface done
+    
     // TODO run from command line
-    // TODO run from maven done          DONE 
+    // TODO run from maven done          DONE SOLUTION: mvn clean install spring-boot:run
     
-    // DB Operations: CRUD
-    // insert                            DONE
-    // list                              DONE
-    // search
-    // delete single item
-    // delete table                      DONE 
-    // change
+    // TODO DB Operations: CRUD
+    // TODO insert                            DONE
+    // TODO list                              DONE SOLUTION: listProductInMongo
+    // TODO search/find
+    // TODO delete single item
+    // TODO delete table                      DONE SOLUTION: dropProductTable
+    // TODO change
     
-    // TODO: WS with post method         DONE
+    // TODO: WS with post method         DONE SOLUTION: postProductInJSONInMongo
     // TODO: WS search
     // TODO: WS change
     // TODO: SOAP  for search

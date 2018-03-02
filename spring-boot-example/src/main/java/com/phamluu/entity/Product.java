@@ -1,4 +1,4 @@
-package com.javatpoint;
+package com.phamluu.entity;
 
 public class Product {
 

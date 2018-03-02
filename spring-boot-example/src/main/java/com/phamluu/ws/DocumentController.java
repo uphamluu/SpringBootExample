@@ -1,4 +1,4 @@
-package com.javatpoint;  
+package com.phamluu.ws;  
   
  
 import org.springframework.web.bind.annotation.RequestMapping;  
