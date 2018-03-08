@@ -1,4 +1,4 @@
-package com.phamluu.entity;
+package com.phamluu.ws.entity;
 
 public class Product {
 

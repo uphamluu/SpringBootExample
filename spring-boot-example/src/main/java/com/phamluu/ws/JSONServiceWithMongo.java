@@ -21,7 +21,7 @@ import com.mongodb.DBObject;
 import com.mongodb.Mongo;
 import com.mongodb.util.JSON;
 
-@RestController
+@RestController(value="/")
 public class JSONServiceWithMongo {
 
 	
