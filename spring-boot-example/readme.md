@@ -4,6 +4,8 @@ mvn clean install spring-boot:run
 web interface
 http://localhost:8080/hello.xhtml
 
+commit 10 in B2
+
 commit 6 in B2_1
 
 commit 7 in b2_2
